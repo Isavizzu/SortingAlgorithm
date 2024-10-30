@@ -1,5 +1,5 @@
 import java.util.ArrayList;
 
 public interface SortingAlgorithm {
-    void sort(ArrayList<Integer> vector);
+    long sort(ArrayList<Integer> vector);
 }

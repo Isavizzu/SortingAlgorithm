@@ -3,7 +3,8 @@ import java.util.Collections;
 
 public class InsertionSort implements SortingAlgorithm {
 
-    public void sort(ArrayList<Integer> vector) {
+    public long sort(ArrayList<Integer> vector) {
+        long start = System.nanoTime();
         for (int i = 1; i < vector.size(); i++) {
             int current = i;
             int j = i-1;
@@ -16,6 +17,9 @@ public class InsertionSort implements SortingAlgorithm {
                 j--;
             }
         }
+        long end = System.nanoTime();
+        return end - start;
+
     }
 
 }
