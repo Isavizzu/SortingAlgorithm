@@ -12,10 +12,6 @@ public class Main {
         vector.add(4);
         vector.add(2);
         vector.add(4);
-        vector.add(3);
-        vector.add(2);
-        vector.add(4);
-        vector.add(2);
         System.out.println(vector);
         insertionSort.sort(vector);
         System.out.println(vector);
