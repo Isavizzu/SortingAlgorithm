@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-
 public class Main {
     public static void main(String[] args) {
 
@@ -17,7 +16,6 @@ public class Main {
         String arq_decrescente100 = "/Dados/decrescente_100.csv";
         String arq_decrescente1000 = "/Dados/decrescente_1000.csv";
         String arq_decrescente10000 = "/Dados/decrescente_10000.csv";
-
 
         ArrayList<Integer> aleat100 = new ArrayList<>();
         ArrayList<Integer> aleat1000 = new ArrayList<>();
@@ -46,9 +44,8 @@ public class Main {
         reader.insertInVector(desc10000, user + arq_decrescente10000);
 
         SortingAlgorithm insertion = new InsertionSort();
-        //mafe SortingAlgorithm bubble = new ;
+        SortingAlgorithm bubble = new BubbleSort();
         //juh SortingAlgorithm quick = new ;
-
 
         long time_insertion_aleat100 = insertion.sort(aleat100);
         long time_insertion_aleat1000 = insertion.sort(aleat1000);
@@ -73,10 +70,27 @@ public class Main {
         System.out.println("Decrescente de 1000 dados: " + time_insertion_desc1000 + " nano segundos");
         System.out.println("Decrescente de 10000 dados: " + time_insertion_desc10000 + " nano segundos\n");
 
+        long time_bubble_aleat100 = bubble.sort(new ArrayList<>(aleat100));
+        long time_bubble_aleat1000 = bubble.sort(new ArrayList<>(aleat1000));
+        long time_bubble_aleat10000 = bubble.sort(new ArrayList<>(aleat10000));
 
+        long time_bubble_cresc100 = bubble.sort(new ArrayList<>(cresc100));
+        long time_bubble_cresc1000 = bubble.sort(new ArrayList<>(cresc1000));
+        long time_bubble_cresc10000 = bubble.sort(new ArrayList<>(cresc10000));
 
+        long time_bubble_desc100 = bubble.sort(new ArrayList<>(desc100));
+        long time_bubble_desc1000 = bubble.sort(new ArrayList<>(desc1000));
+        long time_bubble_desc10000 = bubble.sort(new ArrayList<>(desc10000));
 
-
-
+        System.out.println("Tempo do Algoritmo Bubble Sort");
+        System.out.println("Aleatório de 100 dados: " + time_bubble_aleat100 + " nano segundos");
+        System.out.println("Aleatório de 1000 dados: " + time_bubble_aleat1000 + " nano segundos");
+        System.out.println("Aleatório de 10000 dados: " + time_bubble_aleat10000 + " nano segundos\n");
+        System.out.println("Crescente de 100 dados: " + time_bubble_cresc100 + " nano segundos");
+        System.out.println("Crescente de 1000 dados: " + time_bubble_cresc1000 + " nano segundos");
+        System.out.println("Crescente de 10000 dados: " + time_bubble_cresc10000 + " nano segundos\n");
+        System.out.println("Decrescente de 100 dados: " + time_bubble_desc100 + " nano segundos");
+        System.out.println("Decrescente de 1000 dados: " + time_bubble_desc1000 + " nano segundos");
+        System.out.println("Decrescente de 10000 dados: " + time_bubble_desc10000 + " nano segundos\n");
     }
 }
