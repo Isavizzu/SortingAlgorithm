@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class InsertionSort implements SortingAlgorithm {
@@ -13,8 +12,11 @@ public class InsertionSort implements SortingAlgorithm {
                 if (vector.get(current)< vector.get(j)) {
                     Collections.swap(vector, current, j);
                     current--;
+                    j--;
+                    continue;
                 }
-                j--;
+                break;
+
             }
         }
         long end = System.nanoTime();

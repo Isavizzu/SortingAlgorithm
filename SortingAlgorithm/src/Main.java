@@ -62,6 +62,7 @@ public class Main {
         long time_insertion_desc1000 = insertion.sort(desc1000);
         long time_insertion_desc10000 = insertion.sort(desc10000);
 
+
         System.out.println("Tempo do Algoritmo Insertion Sort");
         System.out.println("Aleatório de 100 dados: " + time_insertion_aleat100 + " nano segundos");
         System.out.println("Aleatório de 1000 dados: " + time_insertion_aleat1000 + " nano segundos");
@@ -73,10 +74,26 @@ public class Main {
         System.out.println("Decrescente de 1000 dados: " + time_insertion_desc1000 + " nano segundos");
         System.out.println("Decrescente de 10000 dados: " + time_insertion_desc10000 + " nano segundos\n");
 
+//        System.out.println(ver(aleat100));
+//        System.out.println(ver(aleat1000));
+//        System.out.println(ver(aleat10000));
+//        System.out.println(ver(cresc100));
+//        System.out.println(ver(cresc1000));
+//        System.out.println(ver(cresc10000));
+//        System.out.println(ver(desc100));
+//        System.out.println(ver(desc1000));
+//        System.out.println(ver(desc10000));
 
+    }
 
-
-
-
+    public static boolean ver(ArrayList<Integer> v) {
+        int i = 0;
+        while(v.get(i) < v.size()-1) {
+            if (v.get(i) > v.get(i+1)){
+                return false;
+            }
+            i++;
+        }
+        return true;
     }
 }
