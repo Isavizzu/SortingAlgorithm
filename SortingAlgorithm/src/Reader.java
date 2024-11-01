@@ -13,6 +13,7 @@ public class Reader {
     }
 
     public void insertInVector (ArrayList<Integer> vector, String path) {
+        vector.clear();
         String line;
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             br.readLine();

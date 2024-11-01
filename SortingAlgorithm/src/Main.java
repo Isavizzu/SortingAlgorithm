@@ -58,6 +58,18 @@ public class Main {
         long time_insertion_desc1000 = insertion.sort(new ArrayList<>(desc1000));
         long time_insertion_desc10000 = insertion.sort(new ArrayList<>(desc10000));
 
+        reader.insertInVector(aleat100, user + arq_aleatorio100);
+        reader.insertInVector(aleat1000, user + arq_aleatorio1000);
+        reader.insertInVector(aleat10000, user + arq_aleatorio10000);
+
+        reader.insertInVector(cresc100, user + arq_crescente100);
+        reader.insertInVector(cresc1000, user + arq_crescente1000);
+        reader.insertInVector(cresc10000, user + arq_crescente10000);
+
+        reader.insertInVector(desc100, user + arq_decrescente100);
+        reader.insertInVector(desc1000, user + arq_decrescente1000);
+        reader.insertInVector(desc10000, user + arq_decrescente10000);
+
         long time_bubble_aleat100 = bubble.sort(new ArrayList<>(aleat100));
         long time_bubble_aleat1000 = bubble.sort(new ArrayList<>(aleat1000));
         long time_bubble_aleat10000 = bubble.sort(new ArrayList<>(aleat10000));
@@ -91,6 +103,7 @@ public class Main {
         System.out.println("Decrescente de 100 dados: " + time_bubble_desc100 + " nano segundos");
         System.out.println("Decrescente de 1000 dados: " + time_bubble_desc1000 + " nano segundos");
         System.out.println("Decrescente de 10000 dados: " + time_bubble_desc10000 + " nano segundos\n");
+
     }
 
     public static boolean ver(ArrayList<Integer> v) {
