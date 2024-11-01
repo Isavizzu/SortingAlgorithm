@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-
 public class Main {
     public static void main(String[] args) {
 
@@ -18,14 +17,13 @@ public class Main {
         String arq_decrescente1000 = "/Dados/decrescente_1000.csv";
         String arq_decrescente10000 = "/Dados/decrescente_10000.csv";
 
-
         ArrayList<Integer> aleat100 = new ArrayList<>();
         ArrayList<Integer> aleat1000 = new ArrayList<>();
         ArrayList<Integer> aleat10000 = new ArrayList<>();
 
         ArrayList<Integer> cresc100 = new ArrayList<>();
         ArrayList<Integer> cresc1000 = new ArrayList<>();
-        ArrayList<Integer> cresc10000  = new ArrayList<>();
+        ArrayList<Integer> cresc10000 = new ArrayList<>();
 
         ArrayList<Integer> desc100 = new ArrayList<>();
         ArrayList<Integer> desc1000 = new ArrayList<>();
@@ -46,22 +44,31 @@ public class Main {
         reader.insertInVector(desc10000, user + arq_decrescente10000);
 
         SortingAlgorithm insertion = new InsertionSort();
-        //mafe SortingAlgorithm bubble = new ;
-        //juh SortingAlgorithm quick = new ;
+        SortingAlgorithm bubble = new BubbleSort();
 
+        long time_insertion_aleat100 = insertion.sort(new ArrayList<>(aleat100));
+        long time_insertion_aleat1000 = insertion.sort(new ArrayList<>(aleat1000));
+        long time_insertion_aleat10000 = insertion.sort(new ArrayList<>(aleat10000));
 
-        long time_insertion_aleat100 = insertion.sort(aleat100);
-        long time_insertion_aleat1000 = insertion.sort(aleat1000);
-        long time_insertion_aleat10000 = insertion.sort(aleat10000);
+        long time_insertion_cresc100 = insertion.sort(new ArrayList<>(cresc100));
+        long time_insertion_cresc1000 = insertion.sort(new ArrayList<>(cresc1000));
+        long time_insertion_cresc10000 = insertion.sort(new ArrayList<>(cresc10000));
 
-        long time_insertion_cresc100 = insertion.sort(cresc100);
-        long time_insertion_cresc1000 = insertion.sort(cresc1000);
-        long time_insertion_cresc10000 = insertion.sort(cresc10000);
+        long time_insertion_desc100 = insertion.sort(new ArrayList<>(desc100));
+        long time_insertion_desc1000 = insertion.sort(new ArrayList<>(desc1000));
+        long time_insertion_desc10000 = insertion.sort(new ArrayList<>(desc10000));
 
-        long time_insertion_desc100 = insertion.sort(desc100);
-        long time_insertion_desc1000 = insertion.sort(desc1000);
-        long time_insertion_desc10000 = insertion.sort(desc10000);
+        long time_bubble_aleat100 = bubble.sort(new ArrayList<>(aleat100));
+        long time_bubble_aleat1000 = bubble.sort(new ArrayList<>(aleat1000));
+        long time_bubble_aleat10000 = bubble.sort(new ArrayList<>(aleat10000));
 
+        long time_bubble_cresc100 = bubble.sort(new ArrayList<>(cresc100));
+        long time_bubble_cresc1000 = bubble.sort(new ArrayList<>(cresc1000));
+        long time_bubble_cresc10000 = bubble.sort(new ArrayList<>(cresc10000));
+
+        long time_bubble_desc100 = bubble.sort(new ArrayList<>(desc100));
+        long time_bubble_desc1000 = bubble.sort(new ArrayList<>(desc1000));
+        long time_bubble_desc10000 = bubble.sort(new ArrayList<>(desc10000));
 
         System.out.println("Tempo do Algoritmo Insertion Sort");
         System.out.println("Aleatório de 100 dados: " + time_insertion_aleat100 + " nano segundos");
@@ -69,27 +76,27 @@ public class Main {
         System.out.println("Aleatório de 10000 dados: " + time_insertion_aleat10000 + " nano segundos\n");
         System.out.println("Crescente de 100 dados: " + time_insertion_cresc100 + " nano segundos");
         System.out.println("Crescente de 1000 dados: " + time_insertion_cresc1000 + " nano segundos");
-        System.out.println("Crescente de 1000 dados: " + time_insertion_cresc10000 + " nano segundos\n");
+        System.out.println("Crescente de 10000 dados: " + time_insertion_cresc10000 + " nano segundos\n");
         System.out.println("Decrescente de 100 dados: " + time_insertion_desc100 + " nano segundos");
         System.out.println("Decrescente de 1000 dados: " + time_insertion_desc1000 + " nano segundos");
         System.out.println("Decrescente de 10000 dados: " + time_insertion_desc10000 + " nano segundos\n");
 
-//        System.out.println(ver(aleat100));
-//        System.out.println(ver(aleat1000));
-//        System.out.println(ver(aleat10000));
-//        System.out.println(ver(cresc100));
-//        System.out.println(ver(cresc1000));
-//        System.out.println(ver(cresc10000));
-//        System.out.println(ver(desc100));
-//        System.out.println(ver(desc1000));
-//        System.out.println(ver(desc10000));
-
+        System.out.println("Tempo do Algoritmo Bubble Sort");
+        System.out.println("Aleatório de 100 dados: " + time_bubble_aleat100 + " nano segundos");
+        System.out.println("Aleatório de 1000 dados: " + time_bubble_aleat1000 + " nano segundos");
+        System.out.println("Aleatório de 10000 dados: " + time_bubble_aleat10000 + " nano segundos\n");
+        System.out.println("Crescente de 100 dados: " + time_bubble_cresc100 + " nano segundos");
+        System.out.println("Crescente de 1000 dados: " + time_bubble_cresc1000 + " nano segundos");
+        System.out.println("Crescente de 10000 dados: " + time_bubble_cresc10000 + " nano segundos\n");
+        System.out.println("Decrescente de 100 dados: " + time_bubble_desc100 + " nano segundos");
+        System.out.println("Decrescente de 1000 dados: " + time_bubble_desc1000 + " nano segundos");
+        System.out.println("Decrescente de 10000 dados: " + time_bubble_desc10000 + " nano segundos\n");
     }
 
     public static boolean ver(ArrayList<Integer> v) {
         int i = 0;
-        while(v.get(i) < v.size()-1) {
-            if (v.get(i) > v.get(i+1)){
+        while (v.get(i) < v.size() - 1) {
+            if (v.get(i) > v.get(i + 1)) {
                 return false;
             }
             i++;
