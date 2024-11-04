@@ -1,36 +1,36 @@
-public class QuickSort {
- 
-    public void changePosition(int[] data, int positionOne, int positionTwo){
-        int value = data[positionOne];
-        data[positionOne] = data[positionTwo];
-        data[positionTwo] = value;
-    }
+import java.util.ArrayList;
 
-    private int partition(int[] data, int start, int end) {
-        int pivot = data[end];
+import static java.util.Collections.swap;
+
+public class QuickSort implements SortingAlgorithm{
+
+    private int partition(ArrayList<Integer> data, int start, int end) {
+        int pivot = data.get(end);
         int countMinors = start;
 
         for(int i = start; i < end; i++){
-            if(data[i] <= pivot){
-                changePosition(data, countMinors, i);
+            if(data.get(i) <= pivot){
+                swap(data, countMinors, i);
                 countMinors++;
             }
         }
-        changePosition(data, countMinors, end);
+        swap(data, countMinors, end);
         return countMinors;
     }
 
-    public long sort(int[] data){
+
+    public long sort(ArrayList<Integer> data){
         long start = System.nanoTime();
-        quickSort(data, 0, data.length - 1);
+        quickSort(data, 0, data.size() - 1);
         long end = System.nanoTime();
         return end - start;
     }
 
-    private void quickSort(int[] data, int start, int end) {
+
+    private void quickSort(ArrayList<Integer> data, int start, int end) {
         if (start < end) {
             int pivotIndex = partition(data, start, end);
-            if(pivotIndex == 0){
+            if(pivotIndex == start){
                 quickSort(data, pivotIndex + 1, end);
             }
             else if(pivotIndex == end){
