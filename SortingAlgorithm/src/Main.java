@@ -97,17 +97,17 @@ public class Main {
         reader.insertInVector(desc1000, user + arq_decrescente1000);
         reader.insertInVector(desc10000, user + arq_decrescente10000);
 
-        long time_quick_aleat100 = bubble.sort(new ArrayList<>(aleat100));
-        long time_quick_aleat1000 = bubble.sort(new ArrayList<>(aleat1000));
-        long time_quick_aleat10000 = bubble.sort(new ArrayList<>(aleat10000));
+        long time_quick_aleat100 = quick.sort(new ArrayList<>(aleat100));
+        long time_quick_aleat1000 = quick.sort(new ArrayList<>(aleat1000));
+        long time_quick_aleat10000 = quick.sort(new ArrayList<>(aleat10000));
 
-        long time_quick_cresc100 = bubble.sort(new ArrayList<>(cresc100));
-        long time_quick_cresc1000 = bubble.sort(new ArrayList<>(cresc1000));
-        long time_quick_cresc10000 = bubble.sort(new ArrayList<>(cresc10000));
+        long time_quick_cresc100 = quick.sort(new ArrayList<>(cresc100));
+        long time_quick_cresc1000 = quick.sort(new ArrayList<>(cresc1000));
+        long time_quick_cresc10000 = quick.sort(new ArrayList<>(cresc10000));
 
-        long time_quick_desc100 = bubble.sort(new ArrayList<>(desc100));
-        long time_quick_desc1000 = bubble.sort(new ArrayList<>(desc1000));
-        long time_quick_desc10000 = bubble.sort(new ArrayList<>(desc10000));
+        long time_quick_desc100 = quick.sort(new ArrayList<>(desc100));
+        long time_quick_desc1000 = quick.sort(new ArrayList<>(desc1000));
+        long time_quick_desc10000 = quick.sort(new ArrayList<>(desc10000));
 
         System.out.println("Tempo do Algoritmo Insertion Sort");
         System.out.println("Aleatório de 100 dados: " + time_insertion_aleat100 + " nano segundos");
