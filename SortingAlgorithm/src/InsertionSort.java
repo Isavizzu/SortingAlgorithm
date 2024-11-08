@@ -8,7 +8,7 @@ public class InsertionSort implements SortingAlgorithm {
         for (int i = 1; i < vector.size(); i++) {
             int current = i;
             int j = i-1;
-            for (j >= 0; j > vector.get(j); j++) {
+            while (j >= 0) {
                 if (vector.get(current)< vector.get(j)) {
                     Collections.swap(vector, current, j);
                     current--;
